@@ -506,10 +506,12 @@ select:focus-visible {
 .giant-bg-text {
   font-family: var(--font-display-hero);
   font-weight: 900;
-  font-size: clamp(4.8rem, 15.5vw, 15.5rem);
+  font-size: clamp(3.8rem, 8vw, 8rem);
   line-height: 0.85;
   letter-spacing: -0.04em;
   text-transform: uppercase;
+  max-width: 100%;
+  text-align: center;
   color: transparent;
   -webkit-text-stroke: 2px rgba(255, 30, 66, 0.65);
   background: linear-gradient(180deg, #ff2347 0%, #aa0d24 70%, #44000b 100%);
@@ -577,6 +579,7 @@ select:focus-visible {
   display: flex;
   flex-direction: column;
   gap: 1.3rem;
+  min-width: 0;
   z-index: 10;
 }
 
@@ -591,6 +594,8 @@ select:focus-visible {
   border-radius: var(--radius-full);
   font-family: var(--font-mono);
   font-size: 0.75rem;
+  max-width: 100%;
+  overflow-wrap: anywhere;
   color: var(--crimson-bright);
   box-shadow: 0 0 14px rgba(255, 30, 66, 0.15);
 }
@@ -623,13 +628,14 @@ select:focus-visible {
 }
 
 .name-display {
-  font-family: var(--font-heading);
-  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  font-family: 'Cinzel', var(--font-heading);
+  font-size: clamp(2rem, 4.3vw, 3.35rem);
   font-weight: 700;
   line-height: 1.08;
-  letter-spacing: -0.03em;
+  letter-spacing: 0.01em;
   color: var(--text-pure);
   text-shadow: 0 4px 18px rgba(0, 0, 0, 0.8);
+  overflow-wrap: anywhere;
 }
 
 .hero-role-row {
@@ -639,6 +645,7 @@ select:focus-visible {
   gap: 0.6rem;
   font-family: var(--font-mono);
   font-size: 0.92rem;
+  min-width: 0;
 }
 
 .role-terminal-tag {
@@ -656,13 +663,17 @@ select:focus-visible {
 
 .role-desc {
   color: var(--text-secondary);
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 .hero-summary {
+  width: 100%;
   font-size: 1.05rem;
   line-height: 1.7;
   color: var(--text-secondary);
   max-width: 580px;
+  overflow-wrap: anywhere;
 }
 
 /* CTA Cluster */
@@ -743,6 +754,7 @@ select:focus-visible {
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
+  min-width: 0;
 }
 
 .telemetry-val {
@@ -761,6 +773,7 @@ select:focus-visible {
   line-height: 1.35;
   text-transform: uppercase;
   letter-spacing: 0.04em;
+  overflow-wrap: anywhere;
 }
 
 /* Right Silhouette Column */
@@ -770,6 +783,12 @@ select:focus-visible {
   align-items: center;
   position: relative;
   z-index: 6;
+}
+
+@media (min-width: 960px) {
+  .hero-visual-col {
+    transform: translateX(-18%);
+  }
 }
 
 .silhouette-chassis {
@@ -958,7 +977,7 @@ select:focus-visible {
 
 .section-title {
   font-family: var(--font-heading);
-  font-size: clamp(1.9rem, 4vw, 2.8rem);
+  font-size: clamp(1.7rem, 3.2vw, 2.4rem);
   font-weight: 700;
   line-height: 1.15;
   color: var(--text-pure);
@@ -967,9 +986,10 @@ select:focus-visible {
 }
 
 .section-subtitle {
-  font-size: 1.05rem;
-  color: var(--text-secondary);
-  line-height: 1.65;
+  max-width: 650px;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  line-height: 1.6;
 }
 
 /* ==================== 6. PROJECTS SECTION & FILTERING ==================== */
@@ -1242,7 +1262,7 @@ select:focus-visible {
 
 .project-title {
   font-family: var(--font-heading);
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   font-weight: 700;
   line-height: 1.3;
   color: var(--text-pure);
@@ -1250,9 +1270,10 @@ select:focus-visible {
 }
 
 .project-desc {
-  font-size: 0.92rem;
-  line-height: 1.6;
-  color: var(--text-secondary);
+  max-width: 42rem;
+  font-size: 0.84rem;
+  line-height: 1.65;
+  color: var(--text-primary);
   margin-bottom: 1.2rem;
   flex: 1;
 }
@@ -2098,9 +2119,17 @@ select:focus-visible {
   }
 
   .giant-bg-text {
-    font-size: clamp(3.8rem, 16vw, 6.5rem);
+    font-size: clamp(2.6rem, 9vw, 3.8rem);
     transform: translateY(-20%);
     -webkit-text-stroke: 1.5px rgba(255, 30, 66, 0.65);
+  }
+
+  .hero-backdrop-typography {
+    top: 72%;
+  }
+
+  .hero-visual-col {
+    transform: none;
   }
 
   .silhouette-chassis {
@@ -2113,6 +2142,38 @@ select:focus-visible {
 
   .section-container {
     padding: 4.5rem 1.25rem;
+  }
+
+  .hero-role-row {
+    align-items: flex-start;
+  }
+
+  .hero-container,
+  .hero-content-col,
+  .hero-telemetry-grid {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .role-desc {
+    flex: 1 1 180px;
+  }
+
+  .hero-cta-cluster {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn-hero-primary,
+  .btn-hero-secondary {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .hero-telemetry-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.6rem;
   }
 }
 
