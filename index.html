@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portofolio resmi Mohamad Ibnu Fadlan (mo_nufan) — Informatics & Front-End Engineer. Menghadirkan arsitektur web modern, performa tinggi, dan antarmuka presisi.">
+  <meta name="keywords" content="Mohamad Ibnu Fadlan, mo_nufan, Portfolio, Front-End Engineer, Informatika, Web Developer">
+  <meta name="author" content="Mohamad Ibnu Fadlan">
+  <title>Mohamad Ibnu Fadlan (mo_nufan) — Informatics & Front-End Engineer</title>
+
+  <!-- Google Fonts: Syne (Ultra Display), Space Grotesk (Tech Headings), Plus Jakarta Sans (Body), JetBrains Mono (Code/HUD) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="theme-crimson-core">
+
+  <!-- Ambient Cyber Backdrop & Scanline Canvas -->
+  <canvas id="ambientCanvas" class="ambient-canvas" aria-hidden="true"></canvas>
+  <div class="scanlines-overlay" aria-hidden="true"></div>
+
+  <!-- ==================== HEADER & INTERACTIVE NAVIGATION ==================== -->
+  <header class="hud-header" id="hudHeader">
+    <div class="hud-header-inner">
+      <!-- Moniker Brand -->
+      <a href="#hero" class="brand-monogram" aria-label="Beranda Mohamad Ibnu Fadlan">
+        <span class="brand-bracket">[</span>
+        <span class="brand-core">mo_nufan</span>
+        <span class="brand-tag">.dev</span>
+        <span class="brand-bracket">]</span>
+        <span class="status-indicator-dot" title="Sistem Aktif & Terhubung"></span>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="hud-nav" id="hudNav" aria-label="Navigasi Utama">
+        <ul class="nav-track">
+          <li><a href="#hero" class="nav-link active"><span class="nav-idx">00</span><span class="nav-txt">Beranda</span></a></li>
+          <li><a href="#projects" class="nav-link"><span class="nav-idx">01</span><span class="nav-txt">Proyek</span></a></li>
+          <li><a href="#skills" class="nav-link"><span class="nav-idx">02</span><span class="nav-txt">Kompetensi</span></a></li>
+          <li><a href="#about" class="nav-link"><span class="nav-idx">03</span><span class="nav-txt">Profil</span></a></li>
+          <li><a href="#contact" class="nav-link"><span class="nav-idx">04</span><span class="nav-txt">Kontak</span></a></li>
+        </ul>
+      </nav>
+
+      <!-- Right Actions: System Ping & Hire CTA -->
+      <div class="hud-actions">
+        <div class="telemetry-pill">
+          <span class="ping-signal"></span>
+          <span class="telemetry-label">SYS_ONLINE</span>
+        </div>
+        <a href="#contact" class="btn-hud-action primary-glow">
+          <span>Inisiasi Kontak</span>
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="7" y1="17" x2="17" y2="7"></line>
+            <polyline points="7 7 17 7 17 17"></polyline>
+          </svg>
+        </a>
+
+        <!-- Mobile Drawer Toggle -->
+        <button class="hud-mobile-toggle" id="mobileToggle" aria-label="Buka menu navigasi" aria-expanded="false">
+          <span class="burger-bar"></span>
+          <span class="burger-bar"></span>
+          <span class="burger-bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu Overlay -->
+  <div class="mobile-drawer-overlay" id="mobileDrawer">
+    <div class="drawer-panel">
+      <div class="drawer-header">
+        <div class="brand-monogram">
+          <span class="brand-bracket">[</span>
+          <span class="brand-core">mo_nufan</span>
+          <span class="brand-bracket">]</span>
+        </div>
+        <button class="drawer-close-btn" id="drawerCloseBtn" aria-label="Tutup menu">✕</button>
+      </div>
+      <nav class="drawer-nav">
+        <ul>
+          <li><a href="#hero" class="drawer-link active"><span class="d-num">00</span> Beranda</a></li>
+          <li><a href="#projects" class="drawer-link"><span class="d-num">01</span> Proyek Unggulan</a></li>
+          <li><a href="#skills" class="drawer-link"><span class="d-num">02</span> Kompetensi Informatika</a></li>
+          <li><a href="#about" class="drawer-link"><span class="d-num">03</span> Tentang Saya</a></li>
+          <li><a href="#contact" class="drawer-link"><span class="d-num">04</span> Hubungi Saya</a></li>
+        </ul>
+      </nav>
+      <div class="drawer-footer">
+        <span class="drawer-status">● STATUS: SIAP KOLABORASI</span>
+        <a href="mailto:ibnufadlan49@gmail.com" class="drawer-email">ibnufadlan49@gmail.com</a>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <!-- ==================== HERO SECTION: CINEMATIC CRIMSON CORE ==================== -->
+    <section class="hero-stage" id="hero">
+      <!-- Background Giant Typographic Backdrop -->
+      <div class="hero-backdrop-typography" aria-hidden="true">
+        <h1 class="giant-bg-text" id="giantBgText">PORTFOLIO</h1>
+        <div class="crimson-atmosphere-glow"></div>
+        <div class="crimson-radial-mesh"></div>
+      </div>
+
+      <!-- Main Stage Grid -->
+      <div class="hero-container">
+        <!-- Content Column (Left) -->
+        <div class="hero-content-col">
+          <div class="hero-status-pill">
+            <span class="pulsing-led"></span>
+            <span class="status-txt">INFORMATICS ENGINEER // AVAILABLE FOR PROJECTS</span>
+          </div>
+
+          <h2 class="hero-name-heading">
+            <span class="name-prefix">Halo, Saya</span>
+            <span class="name-display">MOHAMAD IBNU FADLAN</span>
+          </h2>
+
+          <div class="hero-role-row">
+            <span class="role-terminal-tag">&gt;_ mo_nufan</span>
+            <span class="role-sep">/</span>
+            <span class="role-desc">Front-End Developer &amp; Informatics Practitioner</span>
+          </div>
+
+          <p class="hero-summary">
+            Mendedikasikan ketelitian komputasi untuk membangun arsitektur antarmuka web modern yang cepat, elegan, dan kokoh. Menggabungkan efisiensi algoritma dengan estetika digital berkelas tinggi.
+          </p>
+
+          <!-- CTAs -->
+          <div class="hero-cta-cluster">
+            <a href="#projects" class="btn-hero-primary">
+              <span class="btn-text">Eksplorasi Proyek</span>
+              <span class="btn-arrow">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </span>
+            </a>
+
+            <a href="#contact" class="btn-hero-secondary">
+              <span>Mulai Diskusi</span>
+            </a>
+          </div>
+
+          <!-- Quick Informatics Telemetry Metrics -->
+          <div class="hero-telemetry-grid">
+            <div class="telemetry-card">
+              <span class="telemetry-val">3+</span>
+              <span class="telemetry-key">Tahun Eksplorasi Kode</span>
+            </div>
+            <div class="telemetry-card">
+              <span class="telemetry-val">15+</span>
+              <span class="telemetry-key">Sistem &amp; Repositori</span>
+            </div>
+            <div class="telemetry-card">
+              <span class="telemetry-val">99%</span>
+              <span class="telemetry-key">Presisi Logika &amp; Clean Code</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Silhouette Visual Column (Right / Center Intersect) -->
+        <div class="hero-visual-col">
+          <div class="silhouette-chassis" id="silhouetteChassis">
+            <!-- Backlight Halo Halo Layer -->
+            <div class="silhouette-ambient-rim"></div>
+            
+            <!-- Subject Cutout Image from Assets -->
+            <img 
+              src="assets/profile.png" 
+              alt="Mohamad Ibnu Fadlan - mo_nufan" 
+              class="hero-subject-img" 
+              id="heroSubjectImg"
+              loading="eager"
+            />
+
+            <!-- Holographic HUD Overlays on Character -->
+            <div class="hud-badge top-right">
+              <span class="hud-dot"></span>
+              <span class="hud-badge-title">LOGIC_CORE</span>
+              <span class="hud-badge-val">ES6+ / ALGO</span>
+            </div>
+
+            <div class="hud-badge bottom-left">
+              <span class="hud-badge-title">FIELD_DOMAIN</span>
+              <span class="hud-badge-val">INFORMATIKA</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll Indicator Hint -->
+      <a href="#projects" class="hero-scroll-indicator" aria-label="Gulir ke bagian proyek">
+        <span class="scroll-label">GULIR KE BAWAH</span>
+        <div class="scroll-mouse">
+          <div class="scroll-wheel"></div>
+        </div>
+      </a>
+    </section>
+
+    <!-- ==================== 01 / SELECTED PROJECTS ==================== -->
+    <section class="section-container" id="projects">
+      <div class="section-header">
+        <div class="section-tag">
+          <span class="tag-hash">#01</span>
+          <span class="tag-text">REPOSITORI &amp; SISTEM</span>
+        </div>
+        <h2 class="section-title">Karya Arsitektur Perangkat Lunak</h2>
+        <p class="section-subtitle">
+          Rangkaian aplikasi dan sistem yang dibangun dengan standar industri: performa optimal, struktur data terencana, dan kode yang modular.
+        </p>
+
+        <!-- Project Filter Controls -->
+        <div class="filter-controls" role="tablist" aria-label="Filter Proyek">
+          <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">Semua Repositori</button>
+          <button class="filter-btn" data-filter="web" role="tab" aria-selected="false">Aplikasi Web</button>
+          <button class="filter-btn" data-filter="system" role="tab" aria-selected="false">Sistem &amp; Algoritma</button>
+          <button class="filter-btn" data-filter="ui" role="tab" aria-selected="false">UI/UX Interaktif</button>
+        </div>
+      </div>
+
+      <!-- Project Cards Grid -->
+      <div class="projects-grid">
+        <!-- Project 1: AlgoFlow Visualizer -->
+        <article class="project-card" data-category="system">
+          <div class="project-banner">
+            <div class="banner-topbar">
+              <div class="sys-dots">
+                <span></span><span></span><span></span>
+              </div>
+              <span class="banner-tech-label">ALGORITHM_VISUALIZER.SYS</span>
+              <span class="banner-status-badge">LIVE DEMO</span>
+            </div>
+            <!-- Interactive Visual Preview -->
+            <div class="banner-stage preview-algo">
+              <div class="algo-interactive-nodes">
+                <div class="algo-node" data-val="O(1)"><span>Const</span></div>
+                <div class="algo-connector"></div>
+                <div class="algo-node active" data-val="O(log n)"><span>Binary</span></div>
+                <div class="algo-connector"></div>
+                <div class="algo-node" data-val="O(n)"><span>Linear</span></div>
+              </div>
+              <div class="algo-state-bar">
+                <span class="state-icon">⚡</span>
+                <span class="state-text">Algoritma: Graph Traversal (BFS &amp; DFS) // State: Optimal</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-body">
+            <div class="project-meta-row">
+              <span class="project-version">v2.1.0</span>
+              <span class="project-commit">commit: <code>8b4d19e</code></span>
+            </div>
+
+            <h3 class="project-title">AlgoFlow — Visualizer Algoritma &amp; Struktur Data</h3>
+            
+            <p class="project-desc">
+              Platform interaktif berbasis browser untuk memvisualisasikan eksekusi struktur data graf, binary search tree, dan algoritma pengurutan (quick sort, merge sort) secara step-by-step dengan analisis kompleksitas Big-O.
+            </p>
+
+            <div class="tech-stack-pills">
+              <span class="stack-pill">JavaScript ES6+</span>
+              <span class="stack-pill">HTML5 Canvas</span>
+              <span class="stack-pill">Data Structures</span>
+              <span class="stack-pill">CSS Custom Properties</span>
+            </div>
+
+            <div class="project-actions">
+              <a href="#" class="btn-project-link primary" onclick="event.preventDefault(); window.openDemoModal('algoflow');">
+                <span>Jalankan Simulator</span>
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                  <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                </svg>
+              </a>
+              <a href="https://github.com/ibnufadlan49-svg" target="_blank" rel="noopener noreferrer" class="btn-project-link secondary">
+                <span>Source Code</span>
+                <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 2: Nexus Lab Resource Registry -->
+        <article class="project-card" data-category="web">
+          <div class="project-banner">
+            <div class="banner-topbar">
+              <div class="sys-dots">
+                <span></span><span></span><span></span>
+              </div>
+              <span class="banner-tech-label">LAB_REGISTRY_SYSTEM</span>
+              <span class="banner-status-badge">FULL-STACK</span>
+            </div>
+            <!-- Mockup Stage -->
+            <div class="banner-stage preview-sys">
+              <div class="sys-metric-bars">
+                <div class="metric-line">
+                  <span class="metric-title">ALLOCATED MEMORY</span>
+                  <div class="metric-track"><div class="metric-fill" style="width: 68%;"></div></div>
+                  <span class="metric-num">68%</span>
+                </div>
+                <div class="metric-line">
+                  <span class="metric-title">API RESPONSE TIME</span>
+                  <div class="metric-track"><div class="metric-fill" style="width: 24%;"></div></div>
+                  <span class="metric-num">18ms</span>
+                </div>
+                <div class="metric-line">
+                  <span class="metric-title">DATABASE SYNCHRONIZATION</span>
+                  <div class="metric-track"><div class="metric-fill" style="width: 95%;"></div></div>
+                  <span class="metric-num">99.8%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-body">
+            <div class="project-meta-row">
+              <span class="project-version">v3.0.4</span>
+              <span class="project-commit">commit: <code>3c22f01</code></span>
+            </div>
+
+            <h3 class="project-title">Nexus Lab Registry &amp; Inventory Hub</h3>
+            
+            <p class="project-desc">
+              Sistem manajemen inventaris perangkat laboratorium informatika berbasis web dengan fitur kontrol hak akses berjenjang (Role-Based Access Control), audit trail real-time, dan pelacakan jadwal peminjaman.
+            </p>
+
+            <div class="tech-stack-pills">
+              <span class="stack-pill">Modern JavaScript</span>
+              <span class="stack-pill">RESTful API Architecture</span>
+              <span class="stack-pill">Modular UI</span>
+              <span class="stack-pill">Local Cache &amp; Storage</span>
+            </div>
+
+            <div class="project-actions">
+              <a href="#" class="btn-project-link primary" onclick="event.preventDefault(); window.openDemoModal('nexus');">
+                <span>Buka Dashboard</span>
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                  <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                </svg>
+              </a>
+              <a href="https://github.com/ibnufadlan49-svg" target="_blank" rel="noopener noreferrer" class="btn-project-link secondary">
+                <span>Source Code</span>
+                <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 3: SyntaxDeck UI -->
+        <article class="project-card" data-category="ui">
+          <div class="project-banner">
+            <div class="banner-topbar">
+              <div class="sys-dots">
+                <span></span><span></span><span></span>
+              </div>
+              <span class="banner-tech-label">SYNTAX_DECK_CORE</span>
+              <span class="banner-status-badge">DESIGN SYSTEM</span>
+            </div>
+            <!-- Mockup Stage -->
+            <div class="banner-stage preview-ui">
+              <div class="ide-code-snippet">
+                <div class="code-line"><span class="line-idx">1</span><span class="tok-kw">const</span> <span class="tok-fn">renderArchitecture</span> = () =&gt; {</div>
+                <div class="code-line"><span class="line-idx">2</span>  <span class="tok-kw">return</span> <span class="tok-str">"High-Precision UI Ready"</span>;</div>
+                <div class="code-line"><span class="line-idx">3</span>};</div>
+              </div>
+              <div class="ide-status-pill">
+                <span class="ide-dot"></span>
+                <span>Compiled with 0 errors</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-body">
+            <div class="project-meta-row">
+              <span class="project-version">v1.8.4</span>
+              <span class="project-commit">commit: <code>5f07a2c</code></span>
+            </div>
+
+            <h3 class="project-title">SyntaxDeck — Web Code Editor &amp; Snippet Hub</h3>
+            
+            <p class="project-desc">
+              Lingkungan pengeditan kode berbasis web ultra-ringan tanpa dependensi eksternal. Dilengkapi penyorotan sintaksis instan, pratinjau runtime live, dan ekspor instan.
+            </p>
+
+            <div class="tech-stack-pills">
+              <span class="stack-pill">Vanilla JS ES6</span>
+              <span class="stack-pill">CSS Grid &amp; Flexbox</span>
+              <span class="stack-pill">ContentEditable API</span>
+              <span class="stack-pill">Web Storage</span>
+            </div>
+
+            <div class="project-actions">
+              <a href="#" class="btn-project-link primary" onclick="event.preventDefault(); window.openDemoModal('syntax');">
+                <span>Uji Coba Editor</span>
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                  <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                </svg>
+              </a>
+              <a href="https://github.com/ibnufadlan49-svg" target="_blank" rel="noopener noreferrer" class="btn-project-link secondary">
+                <span>Source Code</span>
+                <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ==================== 02 / COMPETENCIES & TECH MATRIX ==================== -->
+    <section class="section-container alt-bg" id="skills">
+      <div class="section-header">
+        <div class="section-tag">
+          <span class="tag-hash">#02</span>
+          <span class="tag-text">KAPABILITAS TEKNIS</span>
+        </div>
+        <h2 class="section-title">Matriks Kompetensi Informatika</h2>
+        <p class="section-subtitle">
+          Kumpulan disiplin teknis dan instrumen rekayasa perangkat lunak yang dioperasikan untuk menghasilkan solusi komputasi berkualitas tinggi.
+        </p>
+      </div>
+
+      <div class="skills-matrix-grid">
+        <!-- Module 1: Front-End Architecture -->
+        <div class="skill-module-card">
+          <div class="module-header">
+            <div class="module-icon-wrap">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+              </svg>
+            </div>
+            <div>
+              <span class="module-number">MODULE 01</span>
+              <h3 class="module-title">Rekayasa Front-End</h3>
+            </div>
+          </div>
+
+          <p class="module-desc">
+            Merancang antarmuka web semantik berstandar W3C, arsitektur tata letak modern (CSS Grid &amp; Flexbox), penataan variabel sistemik (Custom Properties), dan pemrograman JavaScript native yang efisien tanpa beban library tak perlu.
+          </p>
+
+          <div class="skill-meter-group">
+            <div class="meter-item">
+              <div class="meter-info">
+                <span>HTML5 Semantik &amp; Aksesibilitas (a11y)</span>
+                <span class="meter-score">95%</span>
+              </div>
+              <div class="meter-track"><div class="meter-bar" style="width: 95%;"></div></div>
+            </div>
+
+            <div class="meter-item">
+              <div class="meter-info">
+                <span>Modern CSS (Architecture, Grid, Responsive)</span>
+                <span class="meter-score">92%</span>
+              </div>
+              <div class="meter-track"><div class="meter-bar" style="width: 92%;"></div></div>
+            </div>
+
+            <div class="meter-item">
+              <div class="meter-info">
+                <span>JavaScript ES6+ (DOM, Async/Await, Events)</span>
+                <span class="meter-score">90%</span>
+              </div>
+              <div class="meter-track"><div class="meter-bar" style="width: 90%;"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Module 2: Algorithms & Core Computer Science -->
+        <div class="skill-module-card">
+          <div class="module-header">
+            <div class="module-icon-wrap">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"></path>
+              </svg>
+            </div>
+            <div>
+              <span class="module-number">MODULE 02</span>
+              <h3 class="module-title">Algoritma &amp; Logika Komputasi</h3>
+            </div>
+          </div>
+
+          <p class="module-desc">
+            Pondasi fundamental ilmu informatika: struktur data efisien (Array, Stack, Queue, Hash Table, Graph), analisis kompleksitas asimtotik waktu &amp; ruang (Big-O), serta pemecahan masalah algoritma secara terstruktur.
+          </p>
+
+          <div class="skill-meter-group">
+            <div class="meter-item">
+              <div class="meter-info">
+                <span>Struktur Data (Arrays, Lists, Trees)</span>
+                <span class="meter-score">88%</span>
+              </div>
+              <div class="meter-track"><div class="meter-bar" style="width: 88%;"></div></div>
+            </div>
+
+            <div class="meter-item">
+              <div class="meter-info">
+                <span>Optimasi Kompleksitas Big-O &amp; Memory</span>
+                <span class="meter-score">85%</span>
+              </div>
+              <div class="meter-track"><div class="meter-bar" style="width: 85%;"></div></div>
+            </div>
+
+            <div class="meter-item">
+              <div class="meter-info">
+                <span>Logika OOP &amp; Pemrograman Fungsional</span>
+                <span class="meter-score">90%</span>
+              </div>
+              <div class="meter-track"><div class="meter-bar" style="width: 90%;"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Module 3: System Design & Web Architecture -->
+        <div class="skill-module-card">
+          <div class="module-header">
+            <div class="module-icon-wrap">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+              </svg>
+            </div>
+            <div>
+              <span class="module-number">MODULE 03</span>
+              <h3 class="module-title">Arsitektur Web &amp; API</h3>
+            </div>
+          </div>
+
+          <p class="module-desc">
+            Integrasi alur data terpercaya menggunakan protokol RESTful API, manajemen asynchronous data fetching, penanganan error runtime yang aman, dan optimasi Core Web Vitals untuk kecepatan akses tinggi.
+          </p>
+
+          <div class="skill-meter-group">
+            <div class="meter-item">
+              <div class="meter-info">
+                <span>RESTful Architecture &amp; Fetch API</span>
+                <span class="meter-score">92%</span>
+              </div>
+              <div class="meter-track"><div class="meter-bar" style="width: 92%;"></div></div>
+            </div>
+
+            <div class="meter-item">
+              <div class="meter-info">
+                <span>Browser Storage (LocalStorage, IndexedDB)</span>
+                <span class="meter-score">89%</span>
+              </div>
+              <div class="meter-track"><div class="meter-bar" style="width: 89%;"></div></div>
+            </div>
+
+            <div class="meter-item">
+              <div class="meter-info">
+                <span>Optimasi Render &amp; Kecepatan Muat</span>
+                <span class="meter-score">94%</span>
+              </div>
+              <div class="meter-track"><div class="meter-bar" style="width: 94%;"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Module 4: Tools & Engineering Workflow -->
+        <div class="skill-module-card">
+          <div class="module-header">
+            <div class="module-icon-wrap">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="4 17 10 11 4 5"></polyline>
+                <line x1="12" y1="19" x2="20" y2="19"></line>
+              </svg>
+            </div>
+            <div>
+              <span class="module-number">MODULE 04</span>
+              <h3 class="module-title">Workflow &amp; Instrumen Teknis</h3>
+            </div>
+          </div>
+
+          <p class="module-desc">
+            Manajemen version control berbasis Git &amp; GitHub, terminal scripting, debugging mendalam dengan Chrome DevTools, serta penataan workspace yang rapi dan terdokumentasi dengan baik.
+          </p>
+
+          <div class="skill-meter-group">
+            <div class="meter-item">
+              <div class="meter-info">
+                <span>Git Version Control &amp; GitHub Flow</span>
+                <span class="meter-score">94%</span>
+              </div>
+              <div class="meter-track"><div class="meter-bar" style="width: 94%;"></div></div>
+            </div>
+
+            <div class="meter-item">
+              <div class="meter-info">
+                <span>Command Line Interface (CLI / Bash)</span>
+                <span class="meter-score">86%</span>
+              </div>
+              <div class="meter-track"><div class="meter-bar" style="width: 86%;"></div></div>
+            </div>
+
+            <div class="meter-item">
+              <div class="meter-info">
+                <span>Performance Profiling &amp; DevTools</span>
+                <span class="meter-score">91%</span>
+              </div>
+              <div class="meter-track"><div class="meter-bar" style="width: 91%;"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 03 / ABOUT & INTERACTIVE CONSOLE ==================== -->
+    <section class="section-container" id="about">
+      <div class="section-header">
+        <div class="section-tag">
+          <span class="tag-hash">#03</span>
+          <span class="tag-text">DOSSIER REKAYASA</span>
+        </div>
+        <h2 class="section-title">Tentang Mohamad Ibnu Fadlan</h2>
+        <p class="section-subtitle">
+          Dedikasi intelektual di bidang informatika, manifestasi filosofi clean code, dan identitas rekayasa perangkat lunak.
+        </p>
+      </div>
+
+      <div class="about-grid">
+        <!-- Biography & Principles Dossier -->
+        <div class="dossier-card">
+          <div class="dossier-badge-row">
+            <span class="dossier-chip">ENGINEER_ID: MO-NUFAN-2026</span>
+            <span class="dossier-location">📍 INDONESIA [WIB/UTC+7]</span>
+          </div>
+
+          <h3 class="dossier-headline">Mengubah Kompleksitas Logika Menjadi Solusi Elegan.</h3>
+
+          <p class="dossier-p">
+            Nama saya <strong>Mohamad Ibnu Fadlan</strong>, dikenal luas secara online dengan alias <strong class="crimson-highlight">mo_nufan</strong>. Sebagai seorang praktisi dan mahasiswa di bidang <strong>Informatika</strong>, saya memandang kode bukan sekadar baris teks instruksi komputer, melainkan bentuk rekayasa arsitektur yang membutuhkan disiplin logika tinggi.
+          </p>
+
+          <p class="dossier-p">
+            Fokus utama saya bertumpu pada pengembangan antarmuka web modern yang tangguh, responsif, dan mudah dipelihara. Saya meyakini bahwa software yang hebat adalah software yang terasa instan, intuitif bagi pengguna, dan bersih di balik layarnya.
+          </p>
+
+          <!-- Engineering Principles List -->
+          <div class="principles-stack">
+            <div class="principle-box">
+              <div class="principle-idx">01</div>
+              <div>
+                <h4 class="principle-name">Keterbacaan Di Atas Kerumitan</h4>
+                <p class="principle-txt">Kode ditulis sekali, namun dibaca ratusan kali dalam siklus pemeliharaan. Menulis kode yang terstruktur rapi adalah bentuk kepedulian rekayasa tertinggi.</p>
+              </div>
+            </div>
+
+            <div class="principle-box">
+              <div class="principle-idx">02</div>
+              <div>
+                <h4 class="principle-name">Performa Native Tanpa Bloatware</h4>
+                <p class="principle-txt">Memaksimalkan fitur native peramban web modern guna menghasilkan waktu muat secepat kilat tanpa ketergantungan paket-paket eksternal yang tidak diperlukan.</p>
+              </div>
+            </div>
+
+            <div class="principle-box">
+              <div class="principle-idx">03</div>
+              <div>
+                <h4 class="principle-name">Evolusi Berkelanjutan</h4>
+                <p class="principle-txt">Dunia informatika senantiasa bertransformasi. Eksplorasi paradigma baru dan pemahaman mendalam atas komputasi adalah komitmen harian saya.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Interactive Informatics Inspector Console -->
+        <div class="terminal-card" id="interactiveTerminal">
+          <div class="terminal-bar">
+            <div class="term-win-btns">
+              <span class="btn-dot close"></span>
+              <span class="btn-dot min"></span>
+              <span class="btn-dot max"></span>
+            </div>
+            <div class="terminal-tabs">
+              <button class="term-tab active" data-term-tab="specs">specs.json</button>
+              <button class="term-tab" data-term-tab="profile">profile.sh</button>
+              <button class="term-tab" data-term-tab="cli">interactive_cli</button>
+            </div>
+          </div>
+
+          <!-- Tab Content 1: specs.json -->
+          <div class="terminal-window active" id="tab-specs">
+            <pre class="code-stream"><code><span class="c-dim">// Spesifikasi Lingkungan Mohamad Ibnu Fadlan</span>
+<span class="c-kw">const</span> <span class="c-var">engineerProfile</span> = {
+  <span class="c-key">"fullName"</span>: <span class="c-str">"Mohamad Ibnu Fadlan"</span>,
+  <span class="c-key">"handle"</span>: <span class="c-str">"mo_nufan"</span>,
+  <span class="c-key">"discipline"</span>: <span class="c-str">"Informatika"</span>,
+  <span class="c-key">"specialization"</span>: [<span class="c-str">"Front-End Engineering"</span>, <span class="c-str">"Web Systems"</span>],
+  <span class="c-key">"techStack"</span>: {
+    <span class="c-key">"markup"</span>: <span class="c-str">"HTML5 Semantic"</span>,
+    <span class="c-key">"styling"</span>: <span class="c-str">"Modern CSS3 / Flex / Grid"</span>,
+    <span class="c-key">"scripting"</span>: <span class="c-str">"JavaScript ES6+ / Vanilla"</span>,
+    <span class="c-key">"versionControl"</span>: <span class="c-str">"Git / GitHub"</span>
+  },
+  <span class="c-key">"status"</span>: <span class="c-str">"Aktif &amp; Siap untuk Kolaborasi"</span>,
+  <span class="c-key">"contact"</span>: <span class="c-str">"ibnufadlan49@gmail.com"</span>
+};
+
+<span class="c-kw">export default</span> <span class="c-var">engineerProfile</span>;</code></pre>
+          </div>
+
+          <!-- Tab Content 2: profile.sh -->
+          <div class="terminal-window" id="tab-profile">
+            <pre class="code-stream"><code><span class="c-dim">#!/bin/bash</span>
+<span class="c-dim"># Inisialisasi diagnostik sistem profil</span>
+<span class="c-kw">echo</span> <span class="c-str">"Menghubungkan ke node mo_nufan..."</span>
+<span class="c-kw">ping</span> -c 1 github.com/ibnufadlan49-svg
+
+<span class="c-green">[OK] 200: Host repositori terverifikasi.</span>
+<span class="c-kw">echo</span> <span class="c-str">"Memuat modul keahlian informatika..."</span>
+<span class="c-green">[OK] Modul Algoritma: LOADED</span>
+<span class="c-green">[OK] Modul Antarmuka Web: LOADED</span>
+<span class="c-green">[OK] Modul Version Control: READY</span>
+
+<span class="c-kw">echo</span> <span class="c-str">"Status: Siap menghasilkan kode berdaya guna tinggi."</span></code></pre>
+          </div>
+
+          <!-- Tab Content 3: interactive_cli -->
+          <div class="terminal-window" id="tab-cli">
+            <div class="cli-output" id="cliOutput">
+              <p class="cli-msg">Terminal Interaktif mo_nufan.sys v2.4</p>
+              <p class="cli-msg">Ketik <span class="c-crimson">help</span> untuk melihat daftar perintah yang tersedia.</p>
+            </div>
+            <div class="cli-input-row">
+              <span class="cli-prompt">visitor@nufan:~$</span>
+              <input type="text" id="cliInput" class="cli-input" placeholder="ketik perintah di sini..." autocomplete="off" spellcheck="false" />
+            </div>
+          </div>
+
+          <div class="terminal-footer">
+            <span class="term-status-badge">● CONSOLE ONLINE</span>
+            <span class="term-encoding">UTF-8 // UNIX</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 04 / TRANSMISSION GATEWAY (CONTACT) ==================== -->
+    <section class="section-container alt-bg" id="contact">
+      <div class="section-header">
+        <div class="section-tag">
+          <span class="tag-hash">#04</span>
+          <span class="tag-text">TRANSMISI KOMUNIKASI</span>
+        </div>
+        <h2 class="section-title">Inisiasi Kontak &amp; Kolaborasi</h2>
+        <p class="section-subtitle">
+          Gerbang komunikasi terbuka untuk tawaran proyek, peluang karir profesional, konsultasi teknis, atau eksplorasi ide perangkat lunak baru.
+        </p>
+      </div>
+
+      <div class="contact-chassis">
+        <!-- Direct Communication Nodes -->
+        <div class="contact-channels">
+          <!-- Email Channel -->
+          <a href="mailto:ibnufadlan49@gmail.com" class="channel-card">
+            <div class="channel-icon-wrap">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+            </div>
+            <div class="channel-details">
+              <span class="channel-badge">SURAT ELEKTRONIK</span>
+              <span class="channel-value">ibnufadlan49@gmail.com</span>
+            </div>
+            <span class="channel-arrow">→</span>
+          </a>
+
+          <!-- GitHub Channel -->
+          <a href="https://github.com/ibnufadlan49-svg" target="_blank" rel="noopener noreferrer" class="channel-card">
+            <div class="channel-icon-wrap">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+              </svg>
+            </div>
+            <div class="channel-details">
+              <span class="channel-badge">VERSION CONTROL</span>
+              <span class="channel-value">github.com/ibnufadlan49-svg</span>
+            </div>
+            <span class="channel-arrow">→</span>
+          </a>
+
+          <!-- Location Info -->
+          <div class="channel-card static-node">
+            <div class="channel-icon-wrap">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+            </div>
+            <div class="channel-details">
+              <span class="channel-badge">ZONA OPERASIONAL</span>
+              <span class="channel-value">Indonesia [WIB / UTC+7] — Remote &amp; On-Site</span>
+            </div>
+          </div>
+
+          <!-- Availability Card -->
+          <div class="status-summary-card">
+            <div class="status-top">
+              <span class="pulsing-led"></span>
+              <span class="status-header">STATUS KETERSEDIAAN</span>
+            </div>
+            <p class="status-note">
+              Terbuka untuk posisi <strong>Front-End Engineer</strong>, proyek pembuatan website kustom, maupun riset informatika kolaboratif.
+            </p>
+          </div>
+        </div>
+
+        <!-- Interactive Transmission Form -->
+        <div class="form-wrapper">
+          <div class="form-terminal-header">
+            <span class="form-title">TRANSMISSION_DISPATCH.CONSOLE</span>
+            <span class="form-protocol">PROTOCOL: POST / HTTPS</span>
+          </div>
+
+          <form class="cyber-form" id="contactForm">
+            <div class="form-field">
+              <label for="senderName" class="form-label">NAMA LENGKAP PENGIRIM</label>
+              <div class="input-wrap">
+                <input type="text" id="senderName" name="name" class="form-input" placeholder="cth: Budi Setiawan" required autocomplete="name">
+                <span class="input-glow"></span>
+              </div>
+            </div>
+
+            <div class="form-field">
+              <label for="senderEmail" class="form-label">ALAMAT EMAIL</label>
+              <div class="input-wrap">
+                <input type="email" id="senderEmail" name="email" class="form-input" placeholder="budi@domain.com" required autocomplete="email">
+                <span class="input-glow"></span>
+              </div>
+            </div>
+
+            <div class="form-field">
+              <label for="subjectCategory" class="form-label">KATEGORI TRANSMISI</label>
+              <div class="input-wrap select-wrap">
+                <select id="subjectCategory" name="category" class="form-select">
+                  <option value="project">Tawaran Proyek / Web Development</option>
+                  <option value="career">Peluang Karir / Full-Time Role</option>
+                  <option value="consultation">Diskusi Teknis &amp; Informatika</option>
+                  <option value="other">Keperluan Lainnya</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-field">
+              <label for="messageText" class="form-label">DETAIL PESAN</label>
+              <div class="input-wrap">
+                <textarea id="messageText" name="message" class="form-textarea" rows="4" placeholder="Tuliskan spesifikasi kebutuhan atau pokok bahasan Anda..." required></textarea>
+                <span class="input-glow"></span>
+              </div>
+            </div>
+
+            <button type="submit" class="btn-submit-transmission" id="submitBtn">
+              <span class="submit-text">KIRIM TRANSMISI PESAN</span>
+              <span class="submit-icon">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2">
+                  <line x1="22" y1="2" x2="11" y2="13"></line>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+              </span>
+            </button>
+
+            <!-- Live Form Feedback Console -->
+            <div class="form-feedback-console" id="formFeedback"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== SYSTEM FOOTER ==================== -->
+  <footer class="hud-footer">
+    <div class="footer-inner">
+      <div class="footer-brand-col">
+        <a href="#hero" class="brand-monogram">
+          <span class="brand-bracket">[</span>
+          <span class="brand-core">mo_nufan</span>
+          <span class="brand-tag">.dev</span>
+          <span class="brand-bracket">]</span>
+        </a>
+        <p class="footer-tagline">
+          Informatics &amp; Front-End Engineer Portfolio — Presisi logika, arsitektur kokoh, dan estetika digital modern.
+        </p>
+      </div>
+
+      <div class="footer-meta-col">
+        <div class="footer-metric">
+          <span class="f-lbl">TIMEZONE:</span>
+          <span class="f-val" id="clockWIB">WIB (UTC+7)</span>
+        </div>
+        <div class="footer-metric">
+          <span class="f-lbl">STATUS:</span>
+          <span class="f-val crimson-val">ALL SYSTEMS NOMINAL</span>
+        </div>
+        <div class="footer-metric">
+          <span class="f-lbl">BUILD:</span>
+          <span class="f-val">v2.4.0 (2026.11)</span>
+        </div>
+      </div>
+
+      <div class="footer-action-col">
+        <a href="#hero" class="btn-top-anchor" aria-label="Kembali ke atas">
+          <span>KEMBALI KE ATAS</span>
+          <span class="top-arrow">▲</span>
+        </a>
+        <p class="footer-copy">
+          &copy; <span id="currentYear">2026</span> <strong>Mohamad Ibnu Fadlan</strong>. Hak cipta dilindungi.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== INTERACTIVE SIMULATOR MODAL ==================== -->
+  <div class="modal-backdrop" id="demoModal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-chassis">
+      <div class="modal-topbar">
+        <div class="modal-title-wrap">
+          <span class="modal-dot"></span>
+          <span class="modal-title" id="modalTitle">Simulator Proyek</span>
+        </div>
+        <button class="modal-close-btn" id="modalCloseBtn" aria-label="Tutup jendela">✕</button>
+      </div>
+      <div class="modal-content" id="modalContent">
+        <!-- Dynamic Content Injected by script.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Core JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
